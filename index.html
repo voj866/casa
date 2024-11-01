@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download App</title>
+    <title>Baixar App</title>
     <script>
-        // Adjust tracking link function
         function recordClickAndRedirect() {
-            // Adjust跟踪链接
+            // Adjust tracking link
             const adjustLink = "https://app.adjust.com/1hdxvg9t?redirect=https%3A%2F%2Fimages.1097638.com%2Fwsd-images-prod%2Fcasabrlf2%2Fapp_pack%2Fandroid%2Fcasabrlf2_2.4.53_20241025193618.apk";
 
-            // 记录点击并跳转
+            // Record click and redirect
             fetch(adjustLink).then(() => {
-                // 等待2秒后跳转到应用下载链接
                 setTimeout(() => {
                     window.location.href = adjustLink;
                 }, 2000);
             }).catch(error => {
-                console.error("Error tracking click:", error);
-                // 跳转到应用下载链接，即使Adjust请求失败
+                console.error("Erro ao rastrear clique:", error);
                 window.location.href = adjustLink;
             });
         }
 
-        // 页面加载完成后记录点击并跳转
+        // Trigger click recording on page load
         window.onload = recordClickAndRedirect;
     </script>
 </head>
